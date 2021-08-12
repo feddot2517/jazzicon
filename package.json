@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "beefy src/sample.js --live --open",
-    "build": "browserify ./src/index.js -o ./dist/index.js",
+    "build": "browserify -s Module ./src/index.js -o ./dist/index.js",
     "prepublish": "yarn build"
   },
   "publishConfig": {
