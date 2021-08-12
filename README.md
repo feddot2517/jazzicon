@@ -10,7 +10,9 @@ Say goodbye to boring blocky identicons that look like they came out of the 70s,
 ## Installation
 
 ```
-npm install @metamask/jazzicon
+npm install solarea-jazzicon 
+
+yarn add solarea-jazzicon
 ```
 
 ## Usage
