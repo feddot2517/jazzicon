@@ -1,11 +1,14 @@
 {
-  "name": "@metamask/jazzicon",
-  "version": "2.1.0",
+  "name": "solarea-jazzicon",
+  "version": "0.0.1",
   "description": "Jazzy deterministic identicons for a more entertaining future",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "browser": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "beefy sample.js --live --open"
+    "start": "beefy src/sample.js --live --open",
+    "build": "browserify ./src/index.js -o ./dist/index.js",
+    "prepublish": "yarn build"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
@@ -16,9 +19,12 @@
   ],
   "license": "ISC",
   "dependencies": {
-    "mersenne-twister": "^1.1.0"
+    "mersenne-twister": "^1.1.0",
+    "solarea-jazzicon": "^0.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "browserify": "^17.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MetaMask/jazzicon.git"
@@ -30,5 +36,23 @@
   "bugs": {
     "url": "https://github.com/MetaMask/jazzicon/issues"
   },
-  "homepage": "https://github.com/MetaMask/jazzicon#readme"
+  "homepage": "https://github.com/MetaMask/jazzicon#readme",
+  "targets": {
+    "browser": {
+      "publicUrl": "/"
+    },
+    "node": {
+      "context": "node",
+      "engines": {
+        "node": "14"
+      }
+    },
+    "node-bundle": {
+      "context": "node",
+      "includeNodeModules": true,
+      "engines": {
+        "node": "14"
+      }
+    }
+  }
 }
